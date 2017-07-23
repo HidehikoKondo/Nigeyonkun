@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		061725551ED03754005FD7F3 /* alerm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 061725541ED03754005FD7F3 /* alerm.mp3 */; };
+		061725571ED03A1E005FD7F3 /* alerm.aif in Resources */ = {isa = PBXBuildFile; fileRef = 061725561ED03A1E005FD7F3 /* alerm.aif */; };
+		06FF19F11EC84F44009B6712 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF19F01EC84F44009B6712 /* main.m */; };
+		06FF19F41EC84F44009B6712 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF19F31EC84F44009B6712 /* AppDelegate.m */; };
+		06FF19F71EC84F44009B6712 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF19F61EC84F44009B6712 /* ViewController.m */; };
+		06FF19FA1EC84F44009B6712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06FF19F81EC84F44009B6712 /* Main.storyboard */; };
+		06FF19FC1EC84F44009B6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06FF19FB1EC84F44009B6712 /* Assets.xcassets */; };
+		06FF19FF1EC84F44009B6712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06FF19FD1EC84F44009B6712 /* LaunchScreen.storyboard */; };
+		06FF1A041EC84F44009B6712 /* HackathonProject WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 06FF1A031EC84F44009B6712 /* HackathonProject WatchKit App.app */; };
+		06FF1A0A1EC84F44009B6712 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06FF1A081EC84F44009B6712 /* Interface.storyboard */; };
+		06FF1A0C1EC84F44009B6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06FF1A0B1EC84F44009B6712 /* Assets.xcassets */; };
+		06FF1A131EC84F44009B6712 /* HackathonProject WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 06FF1A121EC84F44009B6712 /* HackathonProject WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		06FF1A1B1EC84F45009B6712 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1A1A1EC84F45009B6712 /* InterfaceController.m */; };
+		06FF1A1E1EC84F45009B6712 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1A1D1EC84F45009B6712 /* ExtensionDelegate.m */; };
+		06FF1A211EC84F45009B6712 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1A201EC84F45009B6712 /* NotificationController.m */; };
+		06FF1A241EC84F45009B6712 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1A231EC84F45009B6712 /* ComplicationController.m */; };
+		06FF1A261EC84F45009B6712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06FF1A251EC84F45009B6712 /* Assets.xcassets */; };
+		06FF1A361EC84FBE009B6712 /* MaBeeeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A351EC84FBE009B6712 /* MaBeeeSDK.framework */; };
+		06FF1A371EC84FBE009B6712 /* MaBeeeSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A351EC84FBE009B6712 /* MaBeeeSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06FF1A3A1EC853D6009B6712 /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A391EC853D6009B6712 /* MEMELib.framework */; };
+		06FF1A3B1EC853D6009B6712 /* MEMELib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A391EC853D6009B6712 /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06FF1A3E1EC8B5B4009B6712 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A3D1EC8B5B4009B6712 /* AVFoundation.framework */; };
+		06FF1A401EC8B5BF009B6712 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FF1A3F1EC8B5BF009B6712 /* AudioToolbox.framework */; };
+		9A749D4B1EC97777001A6BAD /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A749D491EC97777001A6BAD /* WatchConnectivity.framework */; };
+		9A749D4C1EC97777001A6BAD /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A749D4A1EC97777001A6BAD /* WatchKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06FF1A051EC84F44009B6712 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06FF19E41EC84F44009B6712 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06FF1A021EC84F44009B6712;
+			remoteInfo = "HackathonProject WatchKit App";
+		};
+		06FF1A141EC84F44009B6712 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06FF19E41EC84F44009B6712 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06FF1A111EC84F44009B6712;
+			remoteInfo = "HackathonProject WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		06FF1A2D1EC84F45009B6712 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				06FF1A131EC84F44009B6712 /* HackathonProject WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06FF1A311EC84F45009B6712 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				06FF1A041EC84F44009B6712 /* HackathonProject WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06FF1A381EC84FBE009B6712 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				06FF1A3B1EC853D6009B6712 /* MEMELib.framework in Embed Frameworks */,
+				06FF1A371EC84FBE009B6712 /* MaBeeeSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		061725541ED03754005FD7F3 /* alerm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alerm.mp3; sourceTree = "<group>"; };
+		061725561ED03A1E005FD7F3 /* alerm.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = alerm.aif; sourceTree = "<group>"; };
+		06FF19EC1EC84F44009B6712 /* HackathonProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06FF19F01EC84F44009B6712 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06FF19F21EC84F44009B6712 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		06FF19F31EC84F44009B6712 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		06FF19F51EC84F44009B6712 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		06FF19F61EC84F44009B6712 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		06FF19F91EC84F44009B6712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06FF19FB1EC84F44009B6712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06FF19FE1EC84F44009B6712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		06FF1A001EC84F44009B6712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06FF1A031EC84F44009B6712 /* HackathonProject WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackathonProject WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06FF1A091EC84F44009B6712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		06FF1A0B1EC84F44009B6712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06FF1A0D1EC84F44009B6712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06FF1A121EC84F44009B6712 /* HackathonProject WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HackathonProject WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06FF1A181EC84F45009B6712 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		06FF1A191EC84F45009B6712 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		06FF1A1A1EC84F45009B6712 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		06FF1A1C1EC84F45009B6712 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		06FF1A1D1EC84F45009B6712 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		06FF1A1F1EC84F45009B6712 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		06FF1A201EC84F45009B6712 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		06FF1A221EC84F45009B6712 /* ComplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComplicationController.h; sourceTree = "<group>"; };
+		06FF1A231EC84F45009B6712 /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
+		06FF1A251EC84F45009B6712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06FF1A271EC84F45009B6712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06FF1A351EC84FBE009B6712 /* MaBeeeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MaBeeeSDK.framework; sourceTree = "<group>"; };
+		06FF1A391EC853D6009B6712 /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
+		06FF1A3D1EC8B5B4009B6712 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		06FF1A3F1EC8B5BF009B6712 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9A749D491EC97777001A6BAD /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		9A749D4A1EC97777001A6BAD /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06FF19E91EC84F44009B6712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06FF1A3E1EC8B5B4009B6712 /* AVFoundation.framework in Frameworks */,
+				9A749D4B1EC97777001A6BAD /* WatchConnectivity.framework in Frameworks */,
+				9A749D4C1EC97777001A6BAD /* WatchKit.framework in Frameworks */,
+				06FF1A401EC8B5BF009B6712 /* AudioToolbox.framework in Frameworks */,
+				06FF1A3A1EC853D6009B6712 /* MEMELib.framework in Frameworks */,
+				06FF1A361EC84FBE009B6712 /* MaBeeeSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06FF1A0F1EC84F44009B6712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06FF19E31EC84F44009B6712 = {
+			isa = PBXGroup;
+			children = (
+				06FF1A391EC853D6009B6712 /* MEMELib.framework */,
+				06FF1A351EC84FBE009B6712 /* MaBeeeSDK.framework */,
+				06FF19EE1EC84F44009B6712 /* HackathonProject */,
+				06FF1A071EC84F44009B6712 /* HackathonProject WatchKit App */,
+				06FF1A161EC84F45009B6712 /* HackathonProject WatchKit Extension */,
+				06FF19ED1EC84F44009B6712 /* Products */,
+				06FF1A3C1EC8B5B4009B6712 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		06FF19ED1EC84F44009B6712 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06FF19EC1EC84F44009B6712 /* HackathonProject.app */,
+				06FF1A031EC84F44009B6712 /* HackathonProject WatchKit App.app */,
+				06FF1A121EC84F44009B6712 /* HackathonProject WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06FF19EE1EC84F44009B6712 /* HackathonProject */ = {
+			isa = PBXGroup;
+			children = (
+				06FF19F21EC84F44009B6712 /* AppDelegate.h */,
+				06FF19F31EC84F44009B6712 /* AppDelegate.m */,
+				06FF19F51EC84F44009B6712 /* ViewController.h */,
+				06FF19F61EC84F44009B6712 /* ViewController.m */,
+				06FF19F81EC84F44009B6712 /* Main.storyboard */,
+				06FF19FB1EC84F44009B6712 /* Assets.xcassets */,
+				06FF19FD1EC84F44009B6712 /* LaunchScreen.storyboard */,
+				06FF1A001EC84F44009B6712 /* Info.plist */,
+				06FF19EF1EC84F44009B6712 /* Supporting Files */,
+			);
+			path = HackathonProject;
+			sourceTree = "<group>";
+		};
+		06FF19EF1EC84F44009B6712 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				061725561ED03A1E005FD7F3 /* alerm.aif */,
+				061725541ED03754005FD7F3 /* alerm.mp3 */,
+				06FF19F01EC84F44009B6712 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06FF1A071EC84F44009B6712 /* HackathonProject WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				06FF1A081EC84F44009B6712 /* Interface.storyboard */,
+				06FF1A0B1EC84F44009B6712 /* Assets.xcassets */,
+				06FF1A0D1EC84F44009B6712 /* Info.plist */,
+			);
+			path = "HackathonProject WatchKit App";
+			sourceTree = "<group>";
+		};
+		06FF1A161EC84F45009B6712 /* HackathonProject WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				06FF1A191EC84F45009B6712 /* InterfaceController.h */,
+				06FF1A1A1EC84F45009B6712 /* InterfaceController.m */,
+				06FF1A1C1EC84F45009B6712 /* ExtensionDelegate.h */,
+				06FF1A1D1EC84F45009B6712 /* ExtensionDelegate.m */,
+				06FF1A1F1EC84F45009B6712 /* NotificationController.h */,
+				06FF1A201EC84F45009B6712 /* NotificationController.m */,
+				06FF1A221EC84F45009B6712 /* ComplicationController.h */,
+				06FF1A231EC84F45009B6712 /* ComplicationController.m */,
+				06FF1A251EC84F45009B6712 /* Assets.xcassets */,
+				06FF1A271EC84F45009B6712 /* Info.plist */,
+				06FF1A171EC84F45009B6712 /* Supporting Files */,
+			);
+			path = "HackathonProject WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		06FF1A171EC84F45009B6712 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06FF1A181EC84F45009B6712 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06FF1A3C1EC8B5B4009B6712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A749D491EC97777001A6BAD /* WatchConnectivity.framework */,
+				9A749D4A1EC97777001A6BAD /* WatchKit.framework */,
+				06FF1A3F1EC8B5BF009B6712 /* AudioToolbox.framework */,
+				06FF1A3D1EC8B5B4009B6712 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06FF19EB1EC84F44009B6712 /* HackathonProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06FF1A321EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject" */;
+			buildPhases = (
+				06FF19E81EC84F44009B6712 /* Sources */,
+				06FF19E91EC84F44009B6712 /* Frameworks */,
+				06FF19EA1EC84F44009B6712 /* Resources */,
+				06FF1A311EC84F45009B6712 /* Embed Watch Content */,
+				06FF1A381EC84FBE009B6712 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06FF1A061EC84F44009B6712 /* PBXTargetDependency */,
+			);
+			name = HackathonProject;
+			productName = HackathonProject;
+			productReference = 06FF19EC1EC84F44009B6712 /* HackathonProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06FF1A021EC84F44009B6712 /* HackathonProject WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06FF1A2E1EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject WatchKit App" */;
+			buildPhases = (
+				06FF1A011EC84F44009B6712 /* Resources */,
+				06FF1A2D1EC84F45009B6712 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06FF1A151EC84F44009B6712 /* PBXTargetDependency */,
+			);
+			name = "HackathonProject WatchKit App";
+			productName = "HackathonProject WatchKit App";
+			productReference = 06FF1A031EC84F44009B6712 /* HackathonProject WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		06FF1A111EC84F44009B6712 /* HackathonProject WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06FF1A2A1EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject WatchKit Extension" */;
+			buildPhases = (
+				06FF1A0E1EC84F44009B6712 /* Sources */,
+				06FF1A0F1EC84F44009B6712 /* Frameworks */,
+				06FF1A101EC84F44009B6712 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HackathonProject WatchKit Extension";
+			productName = "HackathonProject WatchKit Extension";
+			productReference = 06FF1A121EC84F44009B6712 /* HackathonProject WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06FF19E41EC84F44009B6712 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = UDONKONET;
+				TargetAttributes = {
+					06FF19EB1EC84F44009B6712 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7JKB5AMAKP;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					06FF1A021EC84F44009B6712 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7JKB5AMAKP;
+						ProvisioningStyle = Automatic;
+					};
+					06FF1A111EC84F44009B6712 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7JKB5AMAKP;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 06FF19E71EC84F44009B6712 /* Build configuration list for PBXProject "HackathonProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06FF19E31EC84F44009B6712;
+			productRefGroup = 06FF19ED1EC84F44009B6712 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06FF19EB1EC84F44009B6712 /* HackathonProject */,
+				06FF1A021EC84F44009B6712 /* HackathonProject WatchKit App */,
+				06FF1A111EC84F44009B6712 /* HackathonProject WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06FF19EA1EC84F44009B6712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				061725551ED03754005FD7F3 /* alerm.mp3 in Resources */,
+				061725571ED03A1E005FD7F3 /* alerm.aif in Resources */,
+				06FF19FF1EC84F44009B6712 /* LaunchScreen.storyboard in Resources */,
+				06FF19FC1EC84F44009B6712 /* Assets.xcassets in Resources */,
+				06FF19FA1EC84F44009B6712 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06FF1A011EC84F44009B6712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06FF1A0C1EC84F44009B6712 /* Assets.xcassets in Resources */,
+				06FF1A0A1EC84F44009B6712 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06FF1A101EC84F44009B6712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06FF1A261EC84F45009B6712 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06FF19E81EC84F44009B6712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06FF19F71EC84F44009B6712 /* ViewController.m in Sources */,
+				06FF19F41EC84F44009B6712 /* AppDelegate.m in Sources */,
+				06FF19F11EC84F44009B6712 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06FF1A0E1EC84F44009B6712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06FF1A1E1EC84F45009B6712 /* ExtensionDelegate.m in Sources */,
+				06FF1A241EC84F45009B6712 /* ComplicationController.m in Sources */,
+				06FF1A1B1EC84F45009B6712 /* InterfaceController.m in Sources */,
+				06FF1A211EC84F45009B6712 /* NotificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06FF1A061EC84F44009B6712 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06FF1A021EC84F44009B6712 /* HackathonProject WatchKit App */;
+			targetProxy = 06FF1A051EC84F44009B6712 /* PBXContainerItemProxy */;
+		};
+		06FF1A151EC84F44009B6712 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06FF1A111EC84F44009B6712 /* HackathonProject WatchKit Extension */;
+			targetProxy = 06FF1A141EC84F44009B6712 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		06FF19F81EC84F44009B6712 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06FF19F91EC84F44009B6712 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		06FF19FD1EC84F44009B6712 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06FF19FE1EC84F44009B6712 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		06FF1A081EC84F44009B6712 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06FF1A091EC84F44009B6712 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06FF1A281EC84F45009B6712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06FF1A291EC84F45009B6712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06FF1A2B1EC84F45009B6712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				INFOPLIST_FILE = "HackathonProject WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.HackathonProject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		06FF1A2C1EC84F45009B6712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				INFOPLIST_FILE = "HackathonProject WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.HackathonProject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		06FF1A2F1EC84F45009B6712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				IBSC_MODULE = HackathonProject_WatchKit_Extension;
+				INFOPLIST_FILE = "HackathonProject WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.HackathonProject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		06FF1A301EC84F45009B6712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				IBSC_MODULE = HackathonProject_WatchKit_Extension;
+				INFOPLIST_FILE = "HackathonProject WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.HackathonProject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		06FF1A331EC84F45009B6712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HackathonProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.HackathonProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		06FF1A341EC84F45009B6712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HackathonProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.HackathonProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06FF19E71EC84F44009B6712 /* Build configuration list for PBXProject "HackathonProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06FF1A281EC84F45009B6712 /* Debug */,
+				06FF1A291EC84F45009B6712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06FF1A2A1EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06FF1A2B1EC84F45009B6712 /* Debug */,
+				06FF1A2C1EC84F45009B6712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06FF1A2E1EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06FF1A2F1EC84F45009B6712 /* Debug */,
+				06FF1A301EC84F45009B6712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06FF1A321EC84F45009B6712 /* Build configuration list for PBXNativeTarget "HackathonProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06FF1A331EC84F45009B6712 /* Debug */,
+				06FF1A341EC84F45009B6712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06FF19E41EC84F44009B6712 /* Project object */;
+}
