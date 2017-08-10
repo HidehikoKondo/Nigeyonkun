@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *powerSlider;
 @property (weak, nonatomic) IBOutlet UILabel *distanseLabel;
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property (weak, nonatomic) IBOutlet UIButton *alermStopButton;
 
 @end
@@ -45,8 +46,11 @@
 SystemSoundID sound_1;
 
 //タイマー
-NSTimer *tutorialTimer1;
+NSTimer *approachCheckTimer;
+NSTimer *alermTimer;
 
+//ピッカーで設定した時刻
+NSString *pickerTime;
 
 int m_rssi = 0;
 
@@ -57,7 +61,6 @@ bool updateflg = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
     
     
     //delegate
@@ -443,8 +446,8 @@ bool updateflg = NO;
     [self.audioPlayer stop];
     
     //タイマー停止
-    [tutorialTimer1 invalidate];
-    tutorialTimer1 = nil;
+    [approachCheckTimer invalidate];
+    approachCheckTimer = nil;
     
     //モーター停止
     for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
@@ -485,13 +488,13 @@ bool updateflg = NO;
     if (updateflg == true){
         NSLog(@"タイマー停止");
         updateflg = false;
-        [tutorialTimer1 invalidate];
-        tutorialTimer1 = nil;
+        [approachCheckTimer invalidate];
+        approachCheckTimer = nil;
     }else{
         NSLog(@"タイマー開始");
         updateflg = true;
 
-        tutorialTimer1 = [NSTimer scheduledTimerWithTimeInterval: 0.5f
+        approachCheckTimer = [NSTimer scheduledTimerWithTimeInterval: 0.3f
                                                           target: self
                                                         selector: @selector(statusUpdate)
                                                         userInfo: nil
@@ -579,6 +582,69 @@ bool updateflg = NO;
 - (void)showStatusLabel:(NSString*)message{
     [_statusText setText:message];
 }
+
+//ピッカー
+- (IBAction)changeTimePicker:(id)sender {
+    UIDatePicker *picker = (UIDatePicker *)sender;
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    
+    df.timeStyle = NSDateFormatterMediumStyle;
+    df.dateFormat = @"HH:mm:59";
+    
+    // 選択日時の表示
+    NSLog(@"%@",[df stringFromDate:picker.date]);
+    
+    pickerTime = [df stringFromDate:picker.date];
+    
+    
+}
+
+- (IBAction)alermTimeSetting:(id)sender{
+    NSLog(@"alermtimersetting");
+    
+
+    if([alermTimer isValid]){
+        [alermTimer invalidate];
+        alermTimer = nil;
+        NSLog(@"alermTimer invalidated");
+        
+    }else{
+        alermTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f
+                                                      target: self
+                                                    selector: @selector(alermUpdate)
+                                                    userInfo: nil
+                                                     repeats: YES];
+
+    }
+
+}
+
+- (void)alermUpdate{
+    NSLog(@"alermTimer update");
+    
+    /* 24時間表記 */
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"HH:mm:ss";
+    NSString *date24 = [dateFormatter stringFromDate:date];
+    
+    int hh = [(NSString *)[date24 componentsSeparatedByString:@":"][0] intValue];
+    int mm = [(NSString *)[date24 componentsSeparatedByString:@":"][1] intValue];
+    int ss = [(NSString *)[date24 componentsSeparatedByString:@":"][2] intValue];
+    
+    //ピッカーの時刻
+    int phh = [(NSString *)[pickerTime componentsSeparatedByString:@":"][0] intValue];
+    int pmm = [(NSString *)[pickerTime componentsSeparatedByString:@":"][1] intValue];
+    int pss = [(NSString *)[pickerTime componentsSeparatedByString:@":"][2] intValue];
+
+    
+    NSLog(@"%d:%d:%d",hh, mm, ss);
+    NSLog(@"%d:%d:%d",phh, pmm, pss);
+    
+    NSLog(@"%d時間%d分%d秒後にアラームが鳴ります",phh-hh , pmm-mm, pss-ss );
+    
+}
+
 
 
 

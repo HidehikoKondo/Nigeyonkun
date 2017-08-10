@@ -15,7 +15,7 @@
 
 
 
-@interface ViewController : UIViewController<MEMELibDelegate, UIApplicationDelegate, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate, AVAudioPlayerDelegate>
+@interface ViewController : UIViewController<MEMELibDelegate, UIApplicationDelegate, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate, AVAudioPlayerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property(nonatomic) AVAudioPlayer *audioPlayer;
 
