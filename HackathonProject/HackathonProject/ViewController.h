@@ -10,12 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 
-//MEME
-#import <MEMELib/MEMELib.h>
-
-
-
-@interface ViewController : UIViewController<MEMELibDelegate, UIApplicationDelegate, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate, AVAudioPlayerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface ViewController : UIViewController<UIApplicationDelegate, AVAudioPlayerDelegate, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate, AVAudioPlayerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property(nonatomic) AVAudioPlayer *audioPlayer;
 
