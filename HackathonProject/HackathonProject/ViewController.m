@@ -15,17 +15,12 @@
 
 @interface ViewController ()
 
-//周辺のbluetooth機器を見つけたらこの配列に格納する
-@property (nonatomic, strong) NSMutableArray *peripherals;
-//リアルタイムで取得できるデータ
-@property (nonatomic, retain) NSUserDefaults *settingUD;
-
-
 @property (weak, nonatomic) IBOutlet UISlider *powerSlider;
 @property (weak, nonatomic) IBOutlet UILabel *distanseLabel;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property (weak, nonatomic) IBOutlet UIButton *alermStopButton;
+@property (weak, nonatomic) IBOutlet UILabel *nowLabel;
 
 @end
 
@@ -37,6 +32,7 @@ SystemSoundID sound_1;
 
 //タイマー
 NSTimer *approachCheckTimer;
+NSTimer *nowTimer;
 NSTimer *alermTimer;
 
 //ピッカーで設定した時刻
@@ -53,15 +49,28 @@ bool updateflg = NO;
     // Do any additional setup after loading the view, typically from a nib.
     
 
-    //変数初期化
-    self.peripherals = @[].mutableCopy;
-    _settingUD = [NSUserDefaults standardUserDefaults];
+    //現在時刻更新
+    if([nowTimer isValid]){
+        [nowTimer invalidate];
+        nowTimer = nil;
+        NSLog(@"nowTimer invalidated");
+
+    }else{
+        nowTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f
+                                                      target: self
+                                                    selector: @selector(nowTimeUpdate)
+                                                    userInfo: nil
+                                                     repeats: YES];
+
+    }
+
+
     
     
     //端末のスリープを無効にする
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     
-    
+
     //効果音ファイル読み込み
     NSError *error = nil;
     // 再生する audio ファイルのパスを取得
@@ -78,11 +87,6 @@ bool updateflg = NO;
     // 自分自身をデリゲートに設定
     [self.audioPlayer setDelegate:self];
     self.audioPlayer.numberOfLoops = -1;
-    
-
-    
-    
-
 }
 
 //Mabeee delegate
@@ -96,10 +100,26 @@ bool updateflg = NO;
     [MaBeeeApp.instance removeObserver:self];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+//現在時刻の更新
+//ステータス取f得
+- (void)nowTimeUpdate{
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"HH:mm:ss";
+    NSString *date24 = [dateFormatter stringFromDate:date];
+
+    int hh = [(NSString *)[date24 componentsSeparatedByString:@":"][0] intValue];
+    int mm = [(NSString *)[date24 componentsSeparatedByString:@":"][1] intValue];
+    int ss = [(NSString *)[date24 componentsSeparatedByString:@":"][2] intValue];
+
+    NSString *timeStr = [NSString stringWithFormat:@"%d:%d:%d",hh,mm,ss];
+    [_nowLabel setText: timeStr];
 }
 
 
