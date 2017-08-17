@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <MEMELib/MEMELib.h>
 
 @interface AppDelegate ()
 
@@ -26,47 +25,7 @@
         session.delegate = self;
         [session activateSession];
     }
-    
 
-    //MEME セットアップ
-    [MEMELib setAppClientId:APPCLIENDID clientSecret:CLIENTSECRET];
-    
-    //TODO:自動再接続の設定を有効にするかどうか要検討。アプリの性質上向こうで良い気がする。
-    // 自動再接続設定
-    [[MEMELib sharedInstance] setAutoConnect:NO];
-    
-    /*
-     瞬きの状態
-     status : normal caution dangerの状態が入る
-     blinkcount : １分間ごとの瞬きの回数
-     cautiondatetime : cautionの状態になってからの経過時間
-     */
-    _blinkStatus = [NSMutableDictionary dictionary];
-    
-    //delegate変数の初期化
-    //テストデータ（MEMEに接続しなくても使えるように）
-    MEMERealTimeData *testData = [[MEMERealTimeData alloc]init];
-    testData.accX = -14;
-    testData.accY = -5;
-    testData.accZ = -6;
-    testData.blinkSpeed = 0;
-    testData.blinkStrength = 0;
-    testData.eyeMoveDown = 0;
-    testData.eyeMoveLeft = 0;
-    testData.eyeMoveRight = 0;
-    testData.eyeMoveUp = 0;
-    testData.fitError = 0;
-    testData.isWalking = 0;
-    testData.pitch = 22.66;
-    testData.powerLeft = 5;
-    testData.roll = 64.45;
-    testData.yaw = 247.4;
-    
-    _memeValue = testData;
-    
-    
-    
-    
     return YES;
 }
 

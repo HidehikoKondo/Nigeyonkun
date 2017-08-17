@@ -35,6 +35,11 @@ NSTimer *approachCheckTimer;
 NSTimer *nowTimer;
 NSTimer *alermTimer;
 
+//現在時刻
+int hh = 0;
+int mm = 0;
+int ss = 0;
+
 //ピッカーで設定した時刻
 NSString *pickerTime;
 
@@ -47,29 +52,18 @@ bool updateflg = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
 
     //現在時刻更新
-    if([nowTimer isValid]){
-        [nowTimer invalidate];
-        nowTimer = nil;
-        NSLog(@"nowTimer invalidated");
-
-    }else{
-        nowTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f
-                                                      target: self
-                                                    selector: @selector(nowTimeUpdate)
-                                                    userInfo: nil
-                                                     repeats: YES];
-
-    }
+    nowTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f
+                                                target: self
+                                              selector: @selector(nowTimeUpdate)
+                                              userInfo: nil
+                                               repeats: YES];
 
 
-    
-    
     //端末のスリープを無効にする
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-    
+
 
     //効果音ファイル読み込み
     NSError *error = nil;
@@ -107,21 +101,37 @@ bool updateflg = NO;
 
 
 //現在時刻の更新
-//ステータス取f得
+//ステータス取得
 - (void)nowTimeUpdate{
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"HH:mm:ss";
     NSString *date24 = [dateFormatter stringFromDate:date];
 
-    int hh = [(NSString *)[date24 componentsSeparatedByString:@":"][0] intValue];
-    int mm = [(NSString *)[date24 componentsSeparatedByString:@":"][1] intValue];
-    int ss = [(NSString *)[date24 componentsSeparatedByString:@":"][2] intValue];
+    hh = [(NSString *)[date24 componentsSeparatedByString:@":"][0] intValue];
+    mm = [(NSString *)[date24 componentsSeparatedByString:@":"][1] intValue];
+    ss = [(NSString *)[date24 componentsSeparatedByString:@":"][2] intValue];
 
     NSString *timeStr = [NSString stringWithFormat:@"%d:%d:%d",hh,mm,ss];
     [_nowLabel setText: timeStr];
+
+    self.checkTime;
 }
 
+- (void)checkTime{
+    //ピッカーの時刻と一致するかチェック
+    NSLog(@"pickertime:%@",pickerTime);
+    int phh = [(NSString *)[pickerTime componentsSeparatedByString:@":"][0] intValue];
+    int pmm = [(NSString *)[pickerTime componentsSeparatedByString:@":"][1] intValue];
+    int pss = [(NSString *)[pickerTime componentsSeparatedByString:@":"][2] intValue];
+
+    if(hh == phh && mm == pmm && ss == pss){
+        NSLog(@"ビンゴ！");
+        //TODO: ここでアラーム発動
+    }else{
+        NSLog(@"まだだよ！");
+    }
+}
 
 
 
@@ -136,11 +146,11 @@ bool updateflg = NO;
 //アラーム停止
 -(IBAction)button:(id)sender{
     [self.audioPlayer stop];
-    
+
     //タイマー停止
     [approachCheckTimer invalidate];
     approachCheckTimer = nil;
-    
+
     //モーター停止
     for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
         device.pwmDuty = 0;
@@ -155,14 +165,14 @@ bool updateflg = NO;
 }
 
 
-//ステータス取f得
+//ステータス取得
 - (void)statusUpdate{
     NSLog(@"UPDATE!!");
     for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
         [device updateRssi];
         //[device updateBatteryVoltage];
     }
-    
+
 
 }
 
@@ -171,12 +181,12 @@ bool updateflg = NO;
 
     AVSpeechSynthesizer* speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
     //NSString* speakingText = message;
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"車を追いかけてください"];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"トラックにスマホをセットしてください"];
     [speechSynthesizer speakUtterance:utterance];
-    
-    
-    
-    
+
+
+
+
     if (updateflg == true){
         NSLog(@"タイマー停止");
         updateflg = false;
@@ -187,11 +197,11 @@ bool updateflg = NO;
         updateflg = true;
 
         approachCheckTimer = [NSTimer scheduledTimerWithTimeInterval: 0.3f
-                                                          target: self
-                                                        selector: @selector(statusUpdate)
-                                                        userInfo: nil
-                                                         repeats: YES];
-        
+                                                              target: self
+                                                            selector: @selector(statusUpdate)
+                                                            userInfo: nil
+                                                             repeats: YES];
+
     }
 }
 
@@ -202,28 +212,34 @@ bool updateflg = NO;
         MaBeeeDevice *device = [MaBeeeApp.instance deviceWithIdentifier:identifier];
         NSString *line = [NSString stringWithFormat:@"%d", device.rssi];
         [self appendLine:line];
-        
+
+        //スマホとの距離
         int rssi = device.rssi;
 
-        if(rssi < -70){
-            //スピート0
+
+        if(rssi > -10){
+            //TODO:　ぴったりくっつけるとストップ（荷台に置くと）
+            //ここでアラーム停止
+
+        }else if(rssi < -70){
+            //スピート0（距離が距離が遠くても動かない）
             for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
                 device.pwmDuty = 0;
                 NSLog(@"%d",(int)device.pwmDuty);
                 [_alermStopButton setEnabled:NO];
-                
+
                 AVSpeechSynthesizer* speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
                 //NSString* speakingText = message;
                 AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"アラームは止められません"];
                 [speechSynthesizer speakUtterance:utterance];
             }
         }else{
-            //スピードマックス
+            //スピードマックス（ほどよく近づくと逃げる） -70 ~ -10の間
             for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
                 device.pwmDuty = 50;
                 NSLog(@"%d",(int)device.pwmDuty);
                 [_alermStopButton setEnabled:YES];
-                
+
                 AVSpeechSynthesizer* speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
                 //NSString* speakingText = message;
                 AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"アラームは止められます"];
@@ -233,14 +249,14 @@ bool updateflg = NO;
         }
         return;
     }
-    
-//    if ([MaBeeeDeviceBatteryVoltageDidUpdateNotification isEqualToString:notification.name]) {
-//        NSUInteger identifier = [notification.userInfo[@"MaBeeeDeviceIdentifier"] unsignedIntegerValue];
-//        MaBeeeDevice *device = [MaBeeeApp.instance deviceWithIdentifier:identifier];
-//        NSString *line = [NSString stringWithFormat:@"%@ Volgate: %f", device.name, device.batteryVoltage];
-//        [self appendLine:line];
-//        return;
-//    }
+
+    //    if ([MaBeeeDeviceBatteryVoltageDidUpdateNotification isEqualToString:notification.name]) {
+    //        NSUInteger identifier = [notification.userInfo[@"MaBeeeDeviceIdentifier"] unsignedIntegerValue];
+    //        MaBeeeDevice *device = [MaBeeeApp.instance deviceWithIdentifier:identifier];
+    //        NSString *line = [NSString stringWithFormat:@"%@ Volgate: %f", device.name, device.batteryVoltage];
+    //        [self appendLine:line];
+    //        return;
+    //    }
 }
 
 - (void)appendLine:(NSString *)line {
@@ -275,27 +291,27 @@ bool updateflg = NO;
 - (IBAction)changeTimePicker:(id)sender {
     UIDatePicker *picker = (UIDatePicker *)sender;
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    
+
     df.timeStyle = NSDateFormatterMediumStyle;
-    df.dateFormat = @"HH:mm:59";
-    
+    df.dateFormat = @"HH:mm:00";
+
     // 選択日時の表示
     NSLog(@"%@",[df stringFromDate:picker.date]);
-    
+
     pickerTime = [df stringFromDate:picker.date];
-    
-    
+
+
 }
 
 - (IBAction)alermTimeSetting:(id)sender{
     NSLog(@"alermtimersetting");
-    
+
 
     if([alermTimer isValid]){
         [alermTimer invalidate];
         alermTimer = nil;
         NSLog(@"alermTimer invalidated");
-        
+
     }else{
         alermTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f
                                                       target: self
@@ -309,23 +325,23 @@ bool updateflg = NO;
 
 - (void)alermUpdate{
     NSLog(@"alermTimer update");
-    
+
     /* 24時間表記 */
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"HH:mm:ss";
     NSString *date24 = [dateFormatter stringFromDate:date];
-    
+
     int hh = [(NSString *)[date24 componentsSeparatedByString:@":"][0] intValue];
     int mm = [(NSString *)[date24 componentsSeparatedByString:@":"][1] intValue];
     int ss = [(NSString *)[date24 componentsSeparatedByString:@":"][2] intValue];
-    
+
     //ピッカーの時刻
     int phh = [(NSString *)[pickerTime componentsSeparatedByString:@":"][0] intValue];
     int pmm = [(NSString *)[pickerTime componentsSeparatedByString:@":"][1] intValue];
     int pss = [(NSString *)[pickerTime componentsSeparatedByString:@":"][2] intValue];
 
-    
+
     NSLog(@"%d:%d:%d",hh, mm, ss);
     NSLog(@"%d:%d:%d",phh, pmm, pss);
     

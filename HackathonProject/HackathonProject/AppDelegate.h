@@ -50,9 +50,5 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
-//MEMEから取得した値たちをDelegateで持っておく。
-@property (strong ,nonatomic) MEMERealTimeData *memeValue;
-@property (nonatomic ,strong) NSMutableDictionary *blinkStatus;
-
 @end
 
