@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "555"
-            endingLineNumber = "555"
-            landmarkName = "-appendLine:"
-            landmarkType = "7">
+            endingLineNumber = "555">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,41 +28,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "459"
-            endingLineNumber = "459"
-            landmarkName = "-sliderValueChanged:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController sliderValueChanged:]"
-                  moduleName = "HackathonProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/udonkonet/Documents/Bitbucket/UDONKOAPPS/RunningAlerm/HackathonProject/HackathonProject/ViewController.m"
-                  timestampString = "524044421.925402"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "459"
-                  endingLineNumber = "459"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController sliderValueChanged:]"
-                  moduleName = "HackathonProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/udonkonet/Documents/Bitbucket/UDONKOAPPS/RunningAlerm/HackathonProject/HackathonProject/ViewController.m"
-                  timestampString = "524044421.93106"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "459"
-                  endingLineNumber = "459"
-                  offsetFromSymbolStart = "94">
-               </Location>
-            </Locations>
+            endingLineNumber = "459">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
