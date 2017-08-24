@@ -41,15 +41,6 @@
                                             <action selector="changeTimePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="4xL-dT-wEu"/>
                                         </connections>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWx-xO-lUj">
-                                        <rect key="frame" x="19" y="415" width="58" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="タイマーセット" image="btnOn"/>
-                                        <state key="disabled" image="btnDisable"/>
-                                        <connections>
-                                            <action selector="alermTimeSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ko4-EB-Zr4"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="接近度：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo8-AS-qm5">
                                         <rect key="frame" x="16" y="297" width="288" height="60"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -63,6 +54,19 @@
                                         <state key="normal" image="mabeee"/>
                                         <connections>
                                             <action selector="maBeeeScanButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5YO-pG-tOK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqV-gG-Jbg">
+                                        <rect key="frame" x="0.0" y="350" width="320" height="217"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWx-xO-lUj">
+                                        <rect key="frame" x="246" y="302" width="58" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="タイマーセット" image="btnOn"/>
+                                        <state key="disabled" image="btnDisable"/>
+                                        <connections>
+                                            <action selector="alermTimeSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ko4-EB-Zr4"/>
                                         </connections>
                                     </button>
                                 </subviews>

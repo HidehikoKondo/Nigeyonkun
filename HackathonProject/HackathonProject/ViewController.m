@@ -53,12 +53,7 @@ bool updateflg = NO;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    //現在時刻更新
-    nowTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f
-                                                target: self
-                                              selector: @selector(nowTimeUpdate)
-                                              userInfo: nil
-                                               repeats: YES];
+
 
 
     //端末のスリープを無効にする
@@ -100,8 +95,29 @@ bool updateflg = NO;
 }
 
 
+
+
+
+#pragma -mark 時刻関連処理
+//ピッカー
+- (IBAction)changeTimePicker:(id)sender {
+    UIDatePicker *picker = (UIDatePicker *)sender;
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+
+    df.timeStyle = NSDateFormatterMediumStyle;
+    df.dateFormat = @"HH:mm:00";
+
+    // 選択日時の表示
+    NSLog(@"%@",[df stringFromDate:picker.date]);
+
+    pickerTime = [df stringFromDate:picker.date];
+    
+    
+}
+
+
+
 //現在時刻の更新
-//ステータス取得
 - (void)nowTimeUpdate{
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -117,6 +133,7 @@ bool updateflg = NO;
 
     self.checkTime;
 }
+
 
 - (void)checkTime{
     //ピッカーの時刻と一致するかチェック
@@ -135,13 +152,14 @@ bool updateflg = NO;
 
 
 
-#pragma mark - MaBeee用
+#pragma mark - MaBeee接続用
 - (IBAction)maBeeeScanButtonPressed:(UIButton *)sender {
     MaBeeeScanViewController *vc = MaBeeeScanViewController.new;
     [vc show:self];
 }
 
 
+#pragma mark - ボタン
 
 //アラーム停止
 -(IBAction)button:(id)sender{
@@ -157,25 +175,8 @@ bool updateflg = NO;
     }
 }
 
-- (IBAction)sliderValueChanged:(UISlider *)slider {
-    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
-        device.pwmDuty = (int)(slider.value * 100);
-        NSLog(@"%d",(int)(slider.value * 100));
-    }
-}
 
-
-//ステータス取得
-- (void)statusUpdate{
-    NSLog(@"UPDATE!!");
-    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
-        [device updateRssi];
-        //[device updateBatteryVoltage];
-    }
-
-
-}
-
+#pragma -mark アラーム
 - (IBAction)updateButtonPressed:(UIButton *)sender {
     [self playSE];
 
@@ -201,11 +202,21 @@ bool updateflg = NO;
                                                             selector: @selector(statusUpdate)
                                                             userInfo: nil
                                                              repeats: YES];
+    }
+}
 
+//ステータス取得
+- (void)statusUpdate{
+    NSLog(@"UPDATE!!");
+    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+        [device updateRssi];
+        //[device updateBatteryVoltage];
     }
 }
 
 
+
+#pragma -mark Mabeee状態受信
 - (void)receiveNotification:(NSNotification *)notification {
     if ([MaBeeeDeviceRssiDidUpdateNotification isEqualToString:notification.name]) {
         NSUInteger identifier = [notification.userInfo[@"MaBeeeDeviceIdentifier"] unsignedIntegerValue];
@@ -259,53 +270,56 @@ bool updateflg = NO;
     //    }
 }
 
+
+//接近度表示
 - (void)appendLine:(NSString *)line {
     self.distanseLabel.text = [NSString stringWithFormat:@"🚗接近値：%@\n", line];
 }
 
 
-- (void)playSE{
-    [self.audioPlayer play];
-}
 
 
 
 
 # pragma mark - アラート
-//アラートを表示するだけ
-- (void)showAlert:(NSString*)title message:(NSString*)message{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                      }]];
-    dispatch_async(dispatch_get_main_queue(), ^ {
-        [self presentViewController:alertController animated:YES completion:nil];
-    });
+//アラーム再生
+- (void)playSE{
+    [self.audioPlayer play];
 }
 
+//アラートを表示するだけ（使ってない）
+//- (void)showAlert:(NSString*)title message:(NSString*)message{
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+//                                                                             message:message
+//                                                                      preferredStyle:UIAlertControllerStyleAlert];
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
+//                                                        style:UIAlertActionStyleDefault
+//                                                      handler:^(UIAlertAction *action) {
+//                                                      }]];
+//    dispatch_async(dispatch_get_main_queue(), ^ {
+//        [self presentViewController:alertController animated:YES completion:nil];
+//    });
+//}
 
-//ピッカー
-- (IBAction)changeTimePicker:(id)sender {
-    UIDatePicker *picker = (UIDatePicker *)sender;
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
 
-    df.timeStyle = NSDateFormatterMediumStyle;
-    df.dateFormat = @"HH:mm:00";
-
-    // 選択日時の表示
-    NSLog(@"%@",[df stringFromDate:picker.date]);
-
-    pickerTime = [df stringFromDate:picker.date];
-
-
-}
 
 - (IBAction)alermTimeSetting:(id)sender{
     NSLog(@"alermtimersetting");
 
+
+    //移動予定
+    //現在時刻更新
+    nowTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f
+                                                target: self
+                                              selector: @selector(nowTimeUpdate)
+                                              userInfo: nil
+                                               repeats: YES];
+
+
+
+
+
+    
 
     if([alermTimer isValid]){
         [alermTimer invalidate];
@@ -318,9 +332,7 @@ bool updateflg = NO;
                                                     selector: @selector(alermUpdate)
                                                     userInfo: nil
                                                      repeats: YES];
-
     }
-
 }
 
 - (void)alermUpdate{
