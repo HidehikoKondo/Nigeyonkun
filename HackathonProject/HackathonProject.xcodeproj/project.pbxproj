@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		061725551ED03754005FD7F3 /* alerm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 061725541ED03754005FD7F3 /* alerm.mp3 */; };
 		061725571ED03A1E005FD7F3 /* alerm.aif in Resources */ = {isa = PBXBuildFile; fileRef = 061725561ED03A1E005FD7F3 /* alerm.aif */; };
+		0639260F1F51D0AF0063FD19 /* alerm2.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0639260E1F51D0AF0063FD19 /* alerm2.aif */; };
 		06FF19F11EC84F44009B6712 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF19F01EC84F44009B6712 /* main.m */; };
 		06FF19F41EC84F44009B6712 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF19F31EC84F44009B6712 /* AppDelegate.m */; };
 		06FF19F71EC84F44009B6712 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FF19F61EC84F44009B6712 /* ViewController.m */; };
@@ -91,6 +92,7 @@
 /* Begin PBXFileReference section */
 		061725541ED03754005FD7F3 /* alerm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alerm.mp3; sourceTree = "<group>"; };
 		061725561ED03A1E005FD7F3 /* alerm.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = alerm.aif; sourceTree = "<group>"; };
+		0639260E1F51D0AF0063FD19 /* alerm2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = alerm2.aif; sourceTree = "<group>"; };
 		06FF19EC1EC84F44009B6712 /* HackathonProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FF19F01EC84F44009B6712 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		06FF19F21EC84F44009B6712 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		06FF19EF1EC84F44009B6712 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0639260E1F51D0AF0063FD19 /* alerm2.aif */,
 				061725561ED03A1E005FD7F3 /* alerm.aif */,
 				061725541ED03754005FD7F3 /* alerm.mp3 */,
 				06FF19F01EC84F44009B6712 /* main.m */,
@@ -363,6 +366,7 @@
 				06FF19FF1EC84F44009B6712 /* LaunchScreen.storyboard in Resources */,
 				06FF19FC1EC84F44009B6712 /* Assets.xcassets in Resources */,
 				06FF19FA1EC84F44009B6712 /* Main.storyboard in Resources */,
+				0639260F1F51D0AF0063FD19 /* alerm2.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
