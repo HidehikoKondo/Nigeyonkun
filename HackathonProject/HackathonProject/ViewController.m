@@ -379,9 +379,11 @@ bool updateflg = NO;
     [self.timerOffView setFrame:CGRectMake(500, 0, _timerRunningView.bounds.size.width, _timerRunningView.bounds.size.height)];
     
     
-    
     //ピッカーを有効
     [_timePicker setEnabled:YES];
+    
+    [self speach:@"何時に起きますか？"];
+
 }
 
 
