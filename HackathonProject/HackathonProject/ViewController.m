@@ -42,6 +42,10 @@ SystemSoundID sound_1;
 //タイマー
 NSTimer *approachCheckTimer;
 NSTimer *nowTimer;
+
+NSTimer *rssiTimer;
+
+
 //NSTimer *alermTimer;
 
 //現在時刻
@@ -91,16 +95,30 @@ bool updateflg = NO;
     [self.timerRunningView setFrame:CGRectMake(500, 0, _timerRunningView.bounds.size.width, _timerRunningView.bounds.size.height)];
     [self.timerOnView setFrame:CGRectMake(500, 0, _timerRunningView.bounds.size.width, _timerRunningView.bounds.size.height)];
     [self.timerOffView setFrame:CGRectMake(500, 0, _timerRunningView.bounds.size.width, _timerRunningView.bounds.size.height)];
-
+    
     
     //おしゃべり
     [self speach:@"何時に起きますか？"];
+    
+    approachCheckTimer = [NSTimer scheduledTimerWithTimeInterval: 0.3f
+                                                          target: self
+                                                        selector: @selector(statusUpdate)
+                                                        userInfo: nil
+                                                         repeats: YES];
+    
 }
 
 //Mabeee delegate
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+        [device updateRssi];
+    }
+    
+    
     [MaBeeeApp.instance addObserver:self selector:@selector(receiveNotification:)];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -199,61 +217,54 @@ bool updateflg = NO;
 #pragma -mark Mabeee状態受信
 - (void)receiveNotification:(NSNotification *)notification {
     if ([MaBeeeDeviceRssiDidUpdateNotification isEqualToString:notification.name]) {
+        //再生中（アラーム発動中）でない場合は何もしない
+        if(![self.audioPlayer isPlaying]){
+            return;
+        }
+        
+        //device取得
         NSUInteger identifier = [notification.userInfo[@"MaBeeeDeviceIdentifier"] unsignedIntegerValue];
         MaBeeeDevice *device = [MaBeeeApp.instance deviceWithIdentifier:identifier];
+        
+        //rssi表示
         NSString *line = [NSString stringWithFormat:@"%d", device.rssi];
         [self appendLine:line];
         
         //スマホとの距離
         int rssi = device.rssi;
         
-        
-        if(rssi > -10){
+        if(rssi > -50){
             //TODO:　ぴったりくっつけるとストップ（荷台に置くと）
             //ここでアラーム停止
-            
-        }else if(rssi < -70){
-            //スピート0（距離が距離が遠くても動かない）
             for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
                 device.pwmDuty = 0;
-                NSLog(@"%d",(int)device.pwmDuty);
-                [_alermStopButton setEnabled:NO];
-                
-                AVSpeechSynthesizer* speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
-                //NSString* speakingText = message;
-                AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"アラームは止められません"];
-                [speechSynthesizer speakUtterance:utterance];
+                NSLog(@"荷台にのせたからアラーム停止");
+                [self speach:@"おはようございます！"];
+                [self.audioPlayer stop];
+                [self.timerOffView setFrame:CGRectMake(0, 0, _timerRunningView.bounds.size.width, _timerRunningView.bounds.size.height)];
+                return;
             }
-        }else{
-            //スピードマックス（ほどよく近づくと逃げる） -70 ~ -10の間
+        }else if(rssi > -70 && rssi < -51){
+            //いい具合に近づいたら走行
             for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
                 device.pwmDuty = 50;
-                NSLog(@"%d",(int)device.pwmDuty);
-                [_alermStopButton setEnabled:YES];
-                
-                AVSpeechSynthesizer* speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
-                //NSString* speakingText = message;
-                AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"アラームは止められます"];
-                [speechSynthesizer speakUtterance:utterance];
-                
+                NSLog(@"走行中:%d",(int)device.pwmDuty);
+            }
+        }else{
+            NSLog(@"遠いから停止");
+            for (MaBeeeDevice *device in MaBeeeApp.instance.devices) {
+                device.pwmDuty = 0;
+                NSLog(@"アラーム停止");
             }
         }
         return;
     }
-    
-    //    if ([MaBeeeDeviceBatteryVoltageDidUpdateNotification isEqualToString:notification.name]) {
-    //        NSUInteger identifier = [notification.userInfo[@"MaBeeeDeviceIdentifier"] unsignedIntegerValue];
-    //        MaBeeeDevice *device = [MaBeeeApp.instance deviceWithIdentifier:identifier];
-    //        NSString *line = [NSString stringWithFormat:@"%@ Volgate: %f", device.name, device.batteryVoltage];
-    //        [self appendLine:line];
-    //        return;
-    //    }
 }
 
 
 //接近度表示
 - (void)appendLine:(NSString *)line {
-    self.distanseLabel.text = [NSString stringWithFormat:@"🚗接近値：%@\n", line];
+    self.distanseLabel.text = [NSString stringWithFormat:@"距離：%@\n", line];
 }
 
 
@@ -262,20 +273,6 @@ bool updateflg = NO;
 - (void)playSE{
     [self.audioPlayer play];
 }
-
-//アラートを表示するだけ（使ってない）
-//- (void)showAlert:(NSString*)title message:(NSString*)message{
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-//                                                                             message:message
-//                                                                      preferredStyle:UIAlertControllerStyleAlert];
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
-//                                                        style:UIAlertActionStyleDefault
-//                                                      handler:^(UIAlertAction *action) {
-//                                                      }]];
-//    dispatch_async(dispatch_get_main_queue(), ^ {
-//        [self presentViewController:alertController animated:YES completion:nil];
-//    });
-//}
 
 
 
@@ -392,7 +389,7 @@ bool updateflg = NO;
 -(void)alermStart{
     //アラーム表示
     [self.timerOnView setFrame:CGRectMake(0, 0, _timerRunningView.bounds.size.width, _timerRunningView.bounds.size.height)];
-
+    
     //アラーム再生
     [self playSE];
     [self speach:@"ダンプカーにiPhoneを乗せてください"];
