@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIView *timerOnView;
 @property (weak, nonatomic) IBOutlet UIView *timerOffView;
 
+@property (weak, nonatomic) IBOutlet UIButton *timerSetButton;
 
 
 @end
@@ -69,6 +70,9 @@ bool updateflg = NO;
     //端末のスリープを無効にする
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     
+    [_timerSetButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [_timerSetButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentFill];
+    [_timerSetButton setContentVerticalAlignment:UIControlContentVerticalAlignmentFill];
     
     //効果音ファイル読み込み
     NSError *error = nil;

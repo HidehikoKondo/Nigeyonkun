@@ -38,8 +38,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqV-gG-Jbg">
-                                        <rect key="frame" x="0.0" y="237" width="320" height="243"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <rect key="frame" x="0.0" y="257" width="320" height="243"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <state key="normal" image="btn1_set"/>
                                         <connections>
                                             <action selector="alermTimeSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kdh-cS-aib"/>
@@ -78,7 +78,7 @@
                                         <size key="shadowOffset" width="2" height="2"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcG-Nf-VGy">
-                                        <rect key="frame" x="-47" y="164" width="414" height="316"/>
+                                        <rect key="frame" x="0.0" y="164" width="414" height="316"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="btn2_goodnight"/>
                                         <connections>
@@ -104,7 +104,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="btn3_alert" translatesAutoresizingMaskIntoConstraints="NO" id="AXR-zX-Frz">
-                                        <rect key="frame" x="-47" y="164" width="414" height="316"/>
+                                        <rect key="frame" x="0.0" y="164" width="414" height="316"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -119,7 +119,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKF-33-dDE">
-                                        <rect key="frame" x="-47" y="164" width="414" height="316"/>
+                                        <rect key="frame" x="0.0" y="164" width="414" height="316"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="btn4_stop"/>
                                         <connections>
@@ -139,6 +139,7 @@
                         <outlet property="timerOffView" destination="KPl-fE-Hqc" id="7sE-Z5-v92"/>
                         <outlet property="timerOnView" destination="4RR-I9-teN" id="EaY-Bz-RVq"/>
                         <outlet property="timerRunningView" destination="gSt-bu-Gn5" id="MAD-H5-92X"/>
+                        <outlet property="timerSetButton" destination="sqV-gG-Jbg" id="lo6-iu-pTv"/>
                         <outlet property="timerSetView" destination="K4m-VD-4Bi" id="F35-59-C2K"/>
                     </connections>
                 </viewController>
