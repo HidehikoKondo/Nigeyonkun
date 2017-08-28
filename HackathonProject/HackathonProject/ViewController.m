@@ -394,7 +394,7 @@ bool updateflg = NO;
     
     //アラーム再生
     [self playSE];
-    [self speach:@"ダンプカーにiPhoneを乗せてください"];
+    [self speach:@"スマホをダンプカーに乗せてください"];
 }
 
 
