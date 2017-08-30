@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9AF2135E1F5684A700113DA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF2135D1F5684A700113DA3 /* main.m */; };
+		9AF213611F5684A700113DA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF213601F5684A700113DA3 /* AppDelegate.m */; };
+		9AF213641F5684A700113DA3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF213631F5684A700113DA3 /* ViewController.m */; };
+		9AF213671F5684A700113DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF213651F5684A700113DA3 /* Main.storyboard */; };
+		9AF213691F5684A700113DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF213681F5684A700113DA3 /* Assets.xcassets */; };
+		9AF2136C1F5684A700113DA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF2136A1F5684A700113DA3 /* LaunchScreen.storyboard */; };
+		9AF213751F5684CA00113DA3 /* MaBeeeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF213741F5684CA00113DA3 /* MaBeeeSDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9AF213591F5684A700113DA3 /* RanningAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RanningAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF2135D1F5684A700113DA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9AF2135F1F5684A700113DA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9AF213601F5684A700113DA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9AF213621F5684A700113DA3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9AF213631F5684A700113DA3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9AF213661F5684A700113DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9AF213681F5684A700113DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AF2136B1F5684A700113DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AF2136D1F5684A700113DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF213741F5684CA00113DA3 /* MaBeeeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MaBeeeSDK.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9AF213561F5684A700113DA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF213751F5684CA00113DA3 /* MaBeeeSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9AF213501F5684A600113DA3 = {
+			isa = PBXGroup;
+			children = (
+				9AF2135B1F5684A700113DA3 /* RanningAlarm */,
+				9AF2135A1F5684A700113DA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9AF2135A1F5684A700113DA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AF213591F5684A700113DA3 /* RanningAlarm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AF2135B1F5684A700113DA3 /* RanningAlarm */ = {
+			isa = PBXGroup;
+			children = (
+				9AF2135F1F5684A700113DA3 /* AppDelegate.h */,
+				9AF213601F5684A700113DA3 /* AppDelegate.m */,
+				9AF213621F5684A700113DA3 /* ViewController.h */,
+				9AF213631F5684A700113DA3 /* ViewController.m */,
+				9AF213651F5684A700113DA3 /* Main.storyboard */,
+				9AF213681F5684A700113DA3 /* Assets.xcassets */,
+				9AF2136A1F5684A700113DA3 /* LaunchScreen.storyboard */,
+				9AF2136D1F5684A700113DA3 /* Info.plist */,
+				9AF213731F5684BB00113DA3 /* framework */,
+				9AF2135C1F5684A700113DA3 /* Supporting Files */,
+			);
+			path = RanningAlarm;
+			sourceTree = "<group>";
+		};
+		9AF2135C1F5684A700113DA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AF2135D1F5684A700113DA3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9AF213731F5684BB00113DA3 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				9AF213741F5684CA00113DA3 /* MaBeeeSDK.framework */,
+			);
+			name = framework;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9AF213581F5684A700113DA3 /* RanningAlarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AF213701F5684A700113DA3 /* Build configuration list for PBXNativeTarget "RanningAlarm" */;
+			buildPhases = (
+				9AF213551F5684A700113DA3 /* Sources */,
+				9AF213561F5684A700113DA3 /* Frameworks */,
+				9AF213571F5684A700113DA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RanningAlarm;
+			productName = RanningAlarm;
+			productReference = 9AF213591F5684A700113DA3 /* RanningAlarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AF213511F5684A600113DA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = UDONKONET;
+				TargetAttributes = {
+					9AF213581F5684A700113DA3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7JKB5AMAKP;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9AF213541F5684A600113DA3 /* Build configuration list for PBXProject "RanningAlarm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9AF213501F5684A600113DA3;
+			productRefGroup = 9AF2135A1F5684A700113DA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AF213581F5684A700113DA3 /* RanningAlarm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9AF213571F5684A700113DA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF2136C1F5684A700113DA3 /* LaunchScreen.storyboard in Resources */,
+				9AF213691F5684A700113DA3 /* Assets.xcassets in Resources */,
+				9AF213671F5684A700113DA3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9AF213551F5684A700113DA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF213641F5684A700113DA3 /* ViewController.m in Sources */,
+				9AF213611F5684A700113DA3 /* AppDelegate.m in Sources */,
+				9AF2135E1F5684A700113DA3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9AF213651F5684A700113DA3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AF213661F5684A700113DA3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9AF2136A1F5684A700113DA3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AF2136B1F5684A700113DA3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9AF2136E1F5684A700113DA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9AF2136F1F5684A700113DA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9AF213711F5684A700113DA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RanningAlarm",
+				);
+				INFOPLIST_FILE = RanningAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.runningalarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		9AF213721F5684A700113DA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7JKB5AMAKP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RanningAlarm",
+				);
+				INFOPLIST_FILE = RanningAlarm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.udonko.runningalarm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9AF213541F5684A600113DA3 /* Build configuration list for PBXProject "RanningAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AF2136E1F5684A700113DA3 /* Debug */,
+				9AF2136F1F5684A700113DA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AF213701F5684A700113DA3 /* Build configuration list for PBXNativeTarget "RanningAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AF213711F5684A700113DA3 /* Debug */,
+				9AF213721F5684A700113DA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AF213511F5684A600113DA3 /* Project object */;
+}
